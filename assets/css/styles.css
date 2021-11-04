@@ -183,9 +183,9 @@ a:not(.social__link):hover:before {
 .resume__section-blocks {
 	border: .5rem solid var(--font-color);
 	padding: 2rem;
-	letter-spacing: -.5px;
+	letter-spacing: -.4px;
 	display: grid;
-	grid-gap: 2rem;
+	grid-gap: 3rem;
 	line-height: 1.25;
 }
 
@@ -195,8 +195,15 @@ a:not(.social__link):hover:before {
 }
 
 .resume__article-title {
-	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780)); 
+	font-size: calc(2.2rem + 4 * ((100vw - 32rem) / 780)); 
 	margin: 0;
+	letter-spacing: -1px;
+}
+
+.resume__article-subtitle {
+	font-size: calc(1.8rem + 4 * ((100vw - 32rem) / 780));
+	margin: 0; 
+	font-weight: 400;
 }
 
 .resume__article-list {
@@ -237,7 +244,7 @@ a:not(.social__link):hover:before {
 	max-width: 120rem;
 	margin: 0 auto;
 	display: grid;
-	grid-gap: 2rem;
+	grid-gap: 3rem;
 }
 .portfolio__heading {
 	margin: 0;
@@ -257,8 +264,49 @@ a:not(.social__link):hover:before {
 }
 .portfolio__link {
 	display: inline-flex;
-	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780)); 
+	font-size: calc(2rem + 4 * ((100vw - 32rem) / 780));
 }
+
+.portfolio__link span {
+	position: relative;
+	display: block;
+	padding-right: 2.5rem;
+}
+
+.portfolio__link span:before {
+	border-width: 3px 3px 0 0;
+	border-style: solid;
+	border-color: var(--white);
+	position: absolute;
+	right: .1rem;
+	top: .7rem;
+	width: 1rem;
+	height: 1rem;
+	content: '';
+	z-index: 20;
+	transition: var(--transition);
+}
+.portfolio__link span:after {
+	width: .3rem;
+	height: 1.8rem;
+	background: var(--white);
+	position: absolute;
+	top: .7rem;
+	right: .9rem;
+	content: '';
+	transform: rotate(45deg);
+	z-index: 20;
+	transition: var(--transition);
+}
+
+.portfolio__link:hover span:before {
+	border-color: var(--black);
+}
+
+.portfolio__link:hover span:after {
+	background: var(--black);
+}
+
 .portfolio__description {
 	border: .5rem solid var(--font-color);
 	padding: 2rem;
@@ -349,8 +397,11 @@ a:not(.social__link):hover:before {
 	.resume__intro-location {
 		font-size: 2.7rem;
 	}
-	.resume__article-title {
+	.resume__article-title{
 		font-size: 2rem;
+	}
+	.resume__article-subtitle {
+		font-size: 1.8rem;
 	}
 	.resume__contact {
 		text-align: right;
