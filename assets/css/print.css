@@ -1,0 +1,177 @@
+:root {
+	--black: rgb(0,0,0);
+	--white: rgb(255,255,255);
+	--background-color: var(--white);
+	--font-color: var(--black);
+}
+
+@page { 
+    size: auto;
+    margin: 5mm 1mm 0 1mm;  
+} 
+
+
+body {
+	color: var(--black);
+	background: var(--white);
+	font-size: 1.4rem;
+}
+
+.master {
+	padding: 1rem;
+}
+
+.resume {
+	max-width: 85rem;
+}
+
+.noprint {
+	display: none;
+}
+
+.noscreen {
+	display: block;
+}
+
+.resume__sections {
+	display: grid;
+	grid-template-columns: .6fr .4fr;
+	grid-template-areas: "intro intro"
+						"experience education"
+						"experience skillset"
+						"experience toolset";
+	gap: 4rem;
+}
+
+.resume__section {
+	align-self: flex-start;
+}
+
+.resume__section:before {
+	top: .75rem;
+	right: -.5rem;
+	background: linear-gradient(to right, var(--black), var(--white));
+}
+
+.resume__section-blocks {
+	gap: 2rem;
+}
+
+.resume__section-title,
+.resume__experience .resume__section-title {
+	margin: 0;
+	padding: 0 1rem 2rem 0;
+	font-size: 1.7rem;
+	gap: 1rem;
+}
+
+.resume__section-title {
+	background: var(--white);
+	letter-spacing: 0;
+}
+
+.resume__section-title:before {
+	display: none;
+}
+
+.resume__intro {
+	grid-area: intro;
+	grid-column-end: span 2;
+	margin-bottom: -1rem;
+}
+
+.resume__intro-info {
+	gap: .5rem;
+}
+
+.resume__intro-name {
+	font-size: 2.6rem;
+}
+
+.resume__intro-title {
+	font-size: 2.4rem;
+}
+
+.resume__intro-location {
+	font-size: 2.3rem;
+}
+
+.resume__experience {
+	grid-area: experience;
+}
+
+.resume__education {
+	grid-area: education;
+	margin-bottom: -13rem;
+}
+
+.resume__skillset {
+	grid-area: skillset;
+	margin-bottom: -13rem;
+}
+
+.resume__toolset {
+	grid-area: toolset;
+}
+
+.resume__article-title {
+	margin: 0;
+	position: relative;
+	width: auto;
+	padding: 0;
+	background: 0;
+	font-size: 1.3rem;
+	letter-spacing: 0;
+}
+
+.resume__article-list {
+	gap: .5rem;
+	font-size: 1.1rem;
+	letter-spacing: 0;
+	padding-left: 0;
+}
+
+.resume__intro-article {
+	display: grid;
+	grid-template-columns: .6fr .4fr;
+}
+
+.resume__contact-list {
+	display: grid;
+	padding: 0;
+	gap: .25rem;
+	margin-left: auto;
+	text-align: right;
+	justify-items:flex-end;
+}
+
+.resume__contact-list label {
+	display: block;
+	font-size: 1.4rem;
+	margin: .25rem .5rem 0 0;
+}
+
+.resume__contact-item:not(.noprint) {
+	display: flex;
+	align-self: flex-end;
+	align-items: flex-end;
+}
+
+.resume__link {
+	font-size: 1.8rem;
+	background: 0;
+}
+
+.resume__link:hover {
+	color: #000 !important;
+}
+
+.resume__link span {
+	padding: 0;
+}
+
+.resume__link:before,
+.resume__link span:before,
+.resume__link span:after {
+	display: none;
+}

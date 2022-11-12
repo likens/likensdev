@@ -71,6 +71,9 @@ a:not(.social__link):hover {
 a:not(.social__link):hover:before {
 	width: 100%;
 }
+.noscreen {
+	display: none;
+}
 .master {
 	/* padding: 10vh 0 0; */
 	padding: 3rem 0;
@@ -134,7 +137,7 @@ a:not(.social__link):hover:before {
 	display: grid;
 }
 
-.resume__intro-article {
+.resume__intro-info {
 	display: grid;
 	gap: 1rem;
 }
@@ -147,16 +150,24 @@ a:not(.social__link):hover:before {
 	font-size: calc(2.8rem + 4 * ((100vw - 32rem) / 780)); 
 	margin: 0;
 }
+.resume__intro-location {
+	font-size: calc(2.7rem + 4 * ((100vw - 32rem) / 780)); 
+	margin: 0;
+}
 
 .resume__contact-list {
 	font-weight: 700;
 	letter-spacing: -1px;
-	padding: 1rem 0 0;
+	padding: 2rem 0 0;
 	margin: 0;
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
+}
+
+.resume__contact-list label {
+	display: none;
 }
 
 .resume__contact-value {
@@ -200,9 +211,6 @@ a:not(.social__link):hover:before {
 	position: relative;
 	z-index: 5;
 	background: var(--black);
-}
-
-.resume__section-title:after {
 }
 
 .resume__section-blocks {
@@ -302,7 +310,6 @@ a:not(.social__link):hover:before {
 .resume__link span,
 .portfolio__link span {
 	position: relative;
-	display: block;
 	padding-right: 2.5rem;
 }
 
@@ -425,7 +432,7 @@ a:not(.social__link):hover:before {
 		font-size:3.2rem;
 	}
 	.resume__intro-location {
-		font-size: 2.7rem;
+		font-size: 2.8rem;
 	}
 	.resume__article-title{
 		font-size: 2rem;
