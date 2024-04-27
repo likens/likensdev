@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         resume: resolve(__dirname, 'resume.html'),
+        portfolio: resolve(__dirname, 'portfolio.html'),
       },
     },
   },
