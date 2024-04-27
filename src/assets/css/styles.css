@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--black: rgb(0,0,0);
+	--white: rgb(255,255,255);
+    --minScreenWidth: 320px;
+    --maxMultiplier: 768;
+	--background-color: var(--black);
+	--text-color: var(--white);
+}
+::selection {
+	background: rgba(var(--text-color), .25);
+	color: rgba(var(--text-color), .75);
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--text-color) var(--background-color);
+}
+*::-webkit-scrollbar {
+	width: .5rem;
+	cursor: pointer;
+}
+*::-webkit-scrollbar-track {
+	background-color: var(--background-color);
+}
+*::-webkit-scrollbar-thumb {
+	background-color: var(--text-color);
+}
+html {
+	font-family: system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+	/* font-family: sans-serif; */
+	/* font-size: 62.5%; */
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	background: var(--background-color);
+	color: var(--text-color);
+	font-size: calc(16px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier))); 
+	line-height: 1.25;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+a {
+	color: var(--text-color);
+	font-weight: 700;
+	text-decoration: none;
+	position: relative;
+    @apply transition-colors
+}
+a:before {
+	content: '';
+	width: 0;
+	height: 100%;
+	background: var(--text-color);
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+    transform: translateX(-3px);
+    @apply transition-all
+}
+a:hover {
+	color: var(--background-color);
+}
+a:hover:before {
+	width: calc(100% + 6px);
+}
+.master {
+    animation: fade .5s;
+}
+.logo-caleb {
+	font-size: calc(34px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+}
+.logo-likens {
+	font-size: calc(40px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier))); 
+}
+.description {
+	font-size: calc(30px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier))); 
+}
+.external-link {
+    font-size: calc(24px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+} 
+.resume-name {
+	font-size: calc(30px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+}
+.resume-title {
+	font-size: calc(28px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+}
+.resume-location {
+	font-size: calc(27px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+}
+.resume-section-title {
+	font-size: calc(24px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+}
+.resume-job-title {
+	font-size: calc(20px + 4 * ((100vw - var(--minScreenWidth)) / var(--maxMultiplier)));
+}
+
+@keyframes fade {
+	from {
+		opacity:0
+	}
+	to {
+		opacity:1
+	}
+}
+@media print {
+	:root {
+		--black: rgb(0,0,0);
+		--white: rgb(255,255,255);
+		--background-color: rgb(0,0,0);
+		--text-color: rgb(255,255,255);
+	}
+	@page { 
+		size: auto;
+		margin: 5mm 1mm 0 1mm;  
+	} 
+	body {
+		color: var(--black);
+		background: var(--white);
+		font-family: Arial, Helvetica, sans-serif;
+	}
+    a {
+        color: var(--black);
+    }
+    .resume {
+		grid-template-columns: .6fr .4fr;
+		grid-template-areas: "intro intro"
+							"experience education"
+							"experience skillset"
+							"experience tools";
+    }
+    .resume-intro {
+        grid-area: intro;
+    }
+    .resume-experience {
+        grid-area: experience;
+    }
+    .resume-education {
+        grid-area: education;
+    }
+    .resume-skillset {
+        grid-area: skillset;
+        transform: translateY(-50px);
+    }
+    .resume-tools {
+        grid-area: tools;
+        transform: translateY(-100px);
+    }
+}
