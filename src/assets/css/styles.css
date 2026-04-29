@@ -10,10 +10,10 @@
 	--background-color: var(--black);
 	--text-color: var(--white);
 }
-::selection {
+/* ::selection {
 	background: rgba(var(--text-color), .25);
 	color: rgba(var(--text-color), .75);
-}
+} */
 *,
 *:before,
 *:after {
@@ -134,8 +134,8 @@ a:hover:before {
 		grid-template-columns: .6fr .4fr;
 		grid-template-areas: "intro intro"
 							"experience education"
-							"experience skillset"
-							"experience tools";
+							"experience technical"
+							"experience professional";
     }
     .resume-intro {
         grid-area: intro;
@@ -146,12 +146,12 @@ a:hover:before {
     .resume-education {
         grid-area: education;
     }
-    .resume-skillset {
-        grid-area: skillset;
-        transform: translateY(-50px);
+    .resume-technical {
+        grid-area: technical;
+        transform: translateY(-85px);
     }
-    .resume-tools {
-        grid-area: tools;
-        transform: translateY(-100px);
+    .resume-professional {
+        grid-area: professional;
+        transform: translateY(-170px);
     }
 }
